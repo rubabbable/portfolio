@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: "NexaTrade",
+    desc: "B2B e-commerce platform built with Laravel — final year project. Includes vendor management, product catalog, and order workflows.",
+    tags: ["Laravel", "PHP", "MySQL"],
+    link: "#"
+  },
+  {
+    title: "flap1 (Flutter App)",
+    desc: "Android app built with Flutter, currently in development with emulator-based testing.",
+    tags: ["Flutter", "Dart", "Android Studio"],
+    link: "#"
+  },
+  {
+    title: "Khatm-e-Nubuwwat Mobile App — Thesis Documentation",
+    desc: "BSIT thesis project documentation, formatted to university template using a Node.js automation script with the docx library.",
+    tags: ["Node.js", "Documentation", "Automation"],
+    link: "#"
+  },
+];
+
+const skills = [
+  "Laravel", "PHP", "MySQL", "Flutter", "Android Development",
+  "Canva", "Digital Marketing", "Social Media Management",
+  "MS Office", "AI Tools", "HTML", "CSS", "JavaScript"
+];
+---
+<Layout title="Roosh — Full-Stack Developer & BSIT Student">
+  <!-- Nav -->
+  <nav class="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
+    <span class="text-xl font-bold tracking-tight">Roosh</span>
+    <div class="space-x-6 text-sm text-slate-400">
+      <a href="#projects" class="hover:text-white transition">Projects</a>
+      <a href="#skills" class="hover:text-white transition">Skills</a>
+      <a href="#contact" class="hover:text-white transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 py-20 md:py-32">
+    <p class="text-cyan-400 font-mono text-sm mb-4">Hi, my name is</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">Roosh.</h1>
+    <h2 class="text-2xl md:text-4xl font-bold text-slate-400 mb-6">
+      I build practical web & mobile applications.
+    </h2>
+    <p class="max-w-xl text-slate-400 mb-8">
+      Final-year BS IT student at Bahauddin Zakariya University (CGPA 3.53),
+      focused on Laravel/PHP development, Flutter/Android apps, and freelance
+      work in design and content creation. Open to internships, junior roles,
+      and freelance projects.
+    </p>
+    <div class="flex gap-4">
+      <a href="#projects" class="px-6 py-3 border border-cyan-400 text-cyan-400 rounded hover:bg-cyan-400/10 transition font-mono text-sm">
+        View Projects
+      </a>
+      <a href="#contact" class="px-6 py-3 bg-cyan-400 text-slate-950 rounded hover:bg-cyan-300 transition font-mono text-sm font-bold">
+        Contact Me
+      </a>
+    </div>
+  </header>
+
+  <!-- Projects -->
+  <section id="projects" class="max-w-5xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold mb-2 flex items-center gap-3">
+      <span class="text-cyan-400 font-mono text-lg">01.</span> Projects
+    </h2>
+    <div class="h-px bg-slate-800 mb-10"></div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {projects.map((p) => (
+        <div class="border border-slate-800 rounded-lg p-6 hover:border-cyan-400/50 transition bg-slate-900/40">
+          <h3 class="text-lg font-bold mb-2">{p.title}</h3>
+          <p class="text-slate-400 text-sm mb-4">{p.desc}</p>
+          <div class="flex flex-wrap gap-2">
+            {p.tags.map((tag) => (
+              <span class="text-xs font-mono text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded">{tag}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="max-w-5xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold mb-2 flex items-center gap-3">
+      <span class="text-cyan-400 font-mono text-lg">02.</span> Skills
+    </h2>
+    <div class="h-px bg-slate-800 mb-10"></div>
+    <div class="flex flex-wrap gap-3">
+      {skills.map((s) => (
+        <span class="px-4 py-2 bg-slate-900 border border-slate-800 rounded-full text-sm text-slate-300">{s}</span>
+      ))}
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-5xl mx-auto px-6 py-24 text-center">
+    <h2 class="text-cyan-400 font-mono text-sm mb-4">03. What's Next?</h2>
+    <h3 class="text-3xl md:text-5xl font-extrabold mb-6">Get In Touch</h3>
+    <p class="max-w-md mx-auto text-slate-400 mb-8">
+      I'm currently open to freelance work and junior roles.
+      Whether you have a project, a question, or just want to say hi —
+      my inbox is open.
+    </p>
+    <a href="mailto:youremail@example.com" class="inline-block px-8 py-4 border border-cyan-400 text-cyan-400 rounded font-mono hover:bg-cyan-400/10 transition">
+      Say Hello
+    </a>
+  </section>
+
+  <footer class="text-center text-slate-500 text-sm py-8">
+    Built with Astro & Tailwind CSS · © 2026 Roosh
+  </footer>
+</Layout>
